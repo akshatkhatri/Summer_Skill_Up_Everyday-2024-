@@ -8,13 +8,10 @@ with open("customer.csv","r") as datafile:
          
          CustomerData.append(customerDict)
 
-def get_name(customer):
-     return f"{customer['Fname']} + ' ' + {customer['Lname']}"
-
 def customerdict_to_csv(customer):
      return f'{customer["sno"]},{customer["Fname"]},{customer["Lname"]},{customer["email"]},{customer["date"]},{customer["sub"]}\n'
      
 with open("updatedCustomerFile.csv","w") as newdatafile:
-    for customer in sorted(CustomerData,key = get_name):
+    for customer in sorted(CustomerData,key = lambda customer: f"{customer['Fname']} + ' ' + {customer['Lname']}"):
          newdatafile.write(customerdict_to_csv(customer))
      
