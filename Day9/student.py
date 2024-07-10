@@ -5,6 +5,7 @@ def main():
 
     student = get_details()
     print(f"{student[0]} lives in {student[1]}")
+    
 
 def get_details():
     name = input("What's student's name? ")
