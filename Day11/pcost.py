@@ -28,8 +28,12 @@ def portfolio_cost(filename):
 
             total_stock_cost += stock_quant * stock_price
     return total_stock_cost
+def main():
+    try:
+        print(portfolio_cost("portfolio2.dat"))
+    except FileNotFoundError:
+        print("FIle was not found or had an invalid location".upper())
 
-try:
-    print(portfolio_cost("portfolio2.dat"))
-except FileNotFoundError:
-    print("FIle was not found or had an invalid location".upper())
+
+if __name__ == "__main__":
+    main()
