@@ -9,6 +9,7 @@ class Readrides:
         with open(self.file, "r") as file:
             tracemalloc.start()
             data = file.read()
+            
 
             current, peak = tracemalloc.get_traced_memory()
             print(f"Current memory used is {current} and peak {peak}")
