@@ -36,6 +36,25 @@ class Readrides:
                     records.append(record)
             return records
 
+    def read_rides_as_dicts(self):
+        Bus_data = []
+        with open(self.file) as file:
+            rows = csv.reader(file)
+            headers = next(rows)
+
+            for row in rows:
+                records ={
+                    "route" : row[0],
+                    "date" : row[1],
+                    "daytype" : row[2],
+                    "rides" : int(row[3])
+                }
+                Bus_data.append(records)
+            
+            return Bus_data
+
+
+
                 
 
 if __name__ == '__main__':
@@ -43,5 +62,5 @@ if __name__ == '__main__':
     tracemalloc.start()
 
     RideFile = Readrides("ctabus.csv")
-    Tuple_records = Readrides.Reading_Csv_As_A_ListOfTuples(RideFile)
+    Tuple_records = Readrides.read_rides_as_dicts(RideFile)
     print('Memory Use: Current %d, Peak %d' % tracemalloc.get_traced_memory())

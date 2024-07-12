@@ -1,5 +1,6 @@
 import csv
-from pprint import pprint
+from collections import Counter
+from collections import defaultdict
 portfolio = []
 def read_portfolio(filename):
     with open(filename,"r") as file:
@@ -34,3 +35,13 @@ for s in portfolio:
     Total_stock_holding[s["name"]] += s["shares"]
 
     print(f"\n{Total_stock_holding}")
+
+totals = Counter()
+
+for s in portfolio:
+    totals[s["name"]] += s["shares"]
+
+All_stocks_info = defaultdict(list)
+
+for s in portfolio:
+    All_stocks_info[s["name"]].append(s) 
