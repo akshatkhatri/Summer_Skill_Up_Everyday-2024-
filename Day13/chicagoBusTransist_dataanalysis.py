@@ -53,7 +53,7 @@ def Bus_5_routes_with_the_greatest_increase_in_ridership():
     
     
     top_routes = sorted(route_increases.items(), key=lambda x: x[1], reverse=True)
-    print(top_routes[:5])
+    print(top_routes[-5:])
         
 def main():
     
