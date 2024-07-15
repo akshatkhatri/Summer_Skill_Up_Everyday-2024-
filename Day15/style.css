@@ -1,0 +1,37 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.board {
+    width: 310px;
+    height: 310px;
+    position: relative;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    font-size: 2rem;
+    position: absolute;
+}
+
+#cell1 { top: 0; left: 0; }
+#cell2 { top: 0; left: 104px; }
+#cell3 { top: 0; left: 208px; }
+#cell4 { top: 104px; left: 0; }
+#cell5 { top: 104px; left: 104px; }
+#cell6 { top: 104px; left: 208px; }
+#cell7 { top: 208px; left: 0; }
+#cell8 { top: 208px; left: 104px; }
+#cell9 { top: 208px; left: 208px; }
