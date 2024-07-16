@@ -61,7 +61,7 @@ print(repr(arr > 0))
 print(repr(np.any(arr > 0)))
 print(repr(np.all(arr > 0)))
 
-# However if we use multi-dimensional
+# However if we use more than 1 argument and
 
 
 
