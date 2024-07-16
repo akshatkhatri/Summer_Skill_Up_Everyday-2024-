@@ -35,9 +35,4 @@ int main()
     vector<int>ds;
 
     nextperma(ans,hasharr,arr,ds,n);
-
-    
-    
-    
-
 }
