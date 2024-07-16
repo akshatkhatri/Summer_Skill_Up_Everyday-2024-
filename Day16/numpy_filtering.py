@@ -54,14 +54,39 @@ print(repr(np.where(arr >= 0, positives,negatives))) # The greater than 0 values
 # When called with a single argument it returns a single boolean
 
 arr = np.array([[-2, -1, -3],
-                [4, 5, -6],
-                [3, 9, 1]])
+                 [4, 5, -6],
+                 [3, 9, 1]])
 
 print(repr(arr > 0))
 print(repr(np.any(arr > 0)))
 print(repr(np.all(arr > 0)))
 
-# However if we use more than 1 argument and
+# However if we use more than 1 argument and specify the axis as we did in argmin() and argmax()
 
+print(repr(np.any(arr > 0, axis=0))) # Along the columns
+print(repr(np.any(arr > 0, axis=1))) # along the rows
 
+print(repr(np.all(arr > 0, axis = -1))) # Along the last axis
+
+'''
+axis=0: Operates along columns (for each column, apply the function to each element in that column across all rows).
+
+axis=1: Operates along rows (for each row, apply the function to each element in that row across all columns).
+
+axis=-1: Operates along the last dimension, regardless of the number of dimensions the array has. This is particularly useful for multi-dimensional arrays where you want to apply operations consistently on the last dimension without explicitly specifying its index.
+'''
+
+# We can also use np.any and np.where in tandom with each other for e.g.
+
+arr = np.array([[-2, -1, -3],
+                [4, 5, -6],
+                [3, 9, 1]])
+
+has_positives = np.any(arr > 0, axis = 1)
+print(has_positives)
+
+indices = np.where(has_positives)
+print(indices)
+
+print(arr[indices])
 

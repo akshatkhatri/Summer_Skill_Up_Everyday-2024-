@@ -27,7 +27,7 @@ void nextperma(vector<vector<int>>& ans, vector<int> &hasharr, vector<int> &arr,
 int main()
 {
     vector<vector<int>>ans;
-    vector<int>arr={1,2,3};
+    vector<int>arr={1,2,3,4,5,6};
 
     int n= arr.size();
 
@@ -36,6 +36,7 @@ int main()
 
     nextperma(ans,hasharr,arr,ds,n);
 
+    
     
     
 
