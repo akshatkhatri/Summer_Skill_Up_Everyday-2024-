@@ -1,0 +1,83 @@
+[
+    {
+      "CustomerID": 1,
+      "Name": "John Doe",
+      "Email": "john.doe@example.com",
+      "Age": 28,
+      "Gender": "Male",
+      "PurchaseAmount": 250.00
+    },
+    {
+      "CustomerID": 2,
+      "Name": "Jane Smith",
+      "Email": "jane.smith@example.com",
+      "Age": 34,
+      "Gender": "Female",
+      "PurchaseAmount": 180.50
+    },
+    {
+      "CustomerID": 3,
+      "Name": "Emily Johnson",
+      "Email": "emily.johnson@example.com",
+      "Age": 45,
+      "Gender": "Female",
+      "PurchaseAmount": 320.75
+    },
+    {
+      "CustomerID": 4,
+      "Name": "Michael Brown",
+      "Email": "michael.brown@example.com",
+      "Age": 29,
+      "Gender": "Male",
+      "PurchaseAmount": 150.25
+    },
+    {
+      "CustomerID": 5,
+      "Name": "Jessica Davis",
+      "Email": "jessica.davis@example.com",
+      "Age": 37,
+      "Gender": "Female",
+      "PurchaseAmount": 210.00
+    },
+    {
+      "CustomerID": 6,
+      "Name": "Chris Wilson",
+      "Email": "chris.wilson@example.com",
+      "Age": 22,
+      "Gender": "Male",
+      "PurchaseAmount": 95.00
+    },
+    {
+      "CustomerID": 7,
+      "Name": "Amanda Lee",
+      "Email": "amanda.lee@example.com",
+      "Age": 31,
+      "Gender": "Female",
+      "PurchaseAmount": 275.50
+    },
+    {
+      "CustomerID": 8,
+      "Name": "David Martinez",
+      "Email": "david.martinez@example.com",
+      "Age": 40,
+      "Gender": "Male",
+      "PurchaseAmount": 430.00
+    },
+    {
+      "CustomerID": 9,
+      "Name": "Laura Taylor",
+      "Email": "laura.taylor@example.com",
+      "Age": 26,
+      "Gender": "Female",
+      "PurchaseAmount": 120.00
+    },
+    {
+      "CustomerID": 10,
+      "Name": "James Anderson",
+      "Email": "james.anderson@example.com",
+      "Age": 33,
+      "Gender": "Male",
+      "PurchaseAmount": 305.00
+    }
+  ]
+  

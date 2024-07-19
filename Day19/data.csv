@@ -1,0 +1,11 @@
+CustomerID,Name,Email,Age,Gender,PurchaseAmount
+1,John Doe,john.doe@example.com,28,Male,250.00
+2,Jane Smith,jane.smith@example.com,34,Female,180.50
+3,Emily Johnson,emily.johnson@example.com,45,Female,320.75
+4,Michael Brown,michael.brown@example.com,29,Male,150.25
+5,Jessica Davis,jessica.davis@example.com,37,Female,210.00
+6,Chris Wilson,chris.wilson@example.com,22,Male,95.00
+7,Amanda Lee,amanda.lee@example.com,31,Female,275.50
+8,David Martinez,david.martinez@example.com,40,Male,430.00
+9,Laura Taylor,laura.taylor@example.com,26,Female,120.00
+10,James Anderson,james.anderson@example.com,33,Male,305.00
