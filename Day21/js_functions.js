@@ -52,3 +52,8 @@ console.log(multiply(9999,24834));
 
 
 // alternatively we can do something like this 
+
+const divide = (num1,num2)=> num1 / num2;
+
+const whisper = (text) => text.toLowerCase();
+
