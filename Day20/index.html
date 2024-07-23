@@ -44,6 +44,9 @@
             font-size: medium;
             border-radius: 5px;
         }
+        #nextquestion{
+            margin-top: 50px;
+        }
         .correct {
             background-color: lightgreen;
         }
@@ -68,6 +71,8 @@
         <button name="false" value="false" >false</button>
     </div>
 
+    <button id ="nextquestion" disabled>Next Question</button>
+
     <div id="explanation">
 
     </div>
@@ -85,46 +90,122 @@
       // explanation should be the "explanation" div
       
       const statement = document.getElementById("statement");
-      const optionButtons = document.querySelectorAll("#options");
+      const optionButtons = document.querySelectorAll("button");
       const explanation = document.getElementById("explanation");
     
     // TODO 2: Declare & assign a variable called fact
     // Its value should be an object with a statement, true/false answer, and explanation 
-    const fact = {
-        statement : "Is javascript object oriented programming language",
-        answer : true,
-        explanation : "Yes,Javascript supports various object oriented paradigms such as inheritance,encapsulation and many more"
-    };
+    const fact = [
+    {
+        statement: "Can the 'click' event be used to detect user interactions in JavaScript?",
+        answer: true,
+        explanation: "The 'click' event can be used to detect when a user clicks on an element, allowing for interactive web pages."
+    },
+    {
+        statement: "Is 'while' loop used to iterate over array elements directly?",
+        answer: false,
+        explanation: "The 'while' loop can be used to iterate, but it does not directly iterate over array elements like 'for' or 'forEach'."
+    },
+    {
+        statement: "Is the 'forEach' method available on arrays in JavaScript?",
+        answer: true,
+        explanation: "The 'forEach' method allows you to execute a function for each element in an array."
+    },
+    {
+        statement: "Can you use 'if-else' statements to perform conditional operations in JavaScript?",
+        answer: true,
+        explanation: "The 'if-else' statements are used to perform different actions based on different conditions."
+    },
+    {
+        statement: "Is JavaScript a strongly typed language?",
+        answer: false,
+        explanation: "JavaScript is loosely typed, meaning variables can change types dynamically."
+    }
+];
+    
     
     
     // TODO 3: Set the text of the statement element to the fact's statement
-    statement.textContent = fact.statement;
+
+    const nextquestion = document.getElementById("nextquestion");
+    let currentIndex = 0;
+
+    
+    nextquestion.addEventListener('click',()=>{
+        for(let button of optionButtons)
+        {
+            console.log("inside")
+            button.classList.remove("correct");
+            button.classList.remove("incorrect")
+        }
+        if(currentIndex <= fact.length)
+        {
+            statement.textContent = fact[currentIndex].statement; 
+        }
+        else
+        {
+            currentIndex = 0;
+        }
+    });
+
+    initialquestion = document.getElementById("statement");
+    initialquestion.textContent = fact[currentIndex].statement;
     
 
     // TODO 4: Declare disable & enable functions to set or remove the "disabled" attribute from a given button element
     // disable(button) should set the button element's attribute "disabled" to the value ""
     // enable(button) should remove the attribute "disabled" from the button element
-
-
+    const disableButton = (button) => button.setAttribute("disabled","");
+    const enableButton = (button) => button.removeAttribute("disabled");
 
     // TODO 5: Declare an isCorrect function that compares a guess to the right answer
     // isCorrect(guess) should return true if the guess matches the fact's answer
-    
+     
+    const isCorrect = (guess) => guess === fact[currentIndex].answer.toString();
 
 
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
+    
+    
+
+    for(let button of optionButtons)
+    {
+        button.addEventListener('click',(event)=>{
+
+            console.log("i am clicked")
             // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
-
-
+            const explanationDiv = document.getElementById("explanation");
+            explanationDiv.textContent = fact[currentIndex].explanation;
+            
             // TODO 7: Within the event handler function, 
             // Use a for loop to disable all the option buttons
-
-
+            
+            for(let button of optionButtons)
+            {
+                button.setAttribute("disabled","")
+            }
+            
             // TODO 8: Within the event handler function,
             // Get the guessed value from the clicked button
             // Use a conditional to compare the guess to the fact's answer
             // and add the "correct"/"incorrect" class as appropriate
 
+            if(isCorrect(button.value))
+            {
+                button.classList.add("correct");
+            }
+            else
+            {
+                button.classList.add("incorrect")
+            }
+            
+            nextquestion.removeAttribute("disabled");
+
+            currentIndex++;
+        });
+    }
+
+    
     
 
   </script>
