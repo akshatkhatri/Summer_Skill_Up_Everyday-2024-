@@ -21,7 +21,6 @@ def read_portfolio_as_dict(filename):
         rows = csv.reader(f)
         headers = next(rows)
         portfolio+= []
-        
         for row in rows:
             t = {}
             t['share_name'] = row[0]
