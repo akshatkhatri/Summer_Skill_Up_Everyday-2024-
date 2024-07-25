@@ -20,7 +20,7 @@ def read_portfolio_as_dict(filename):
     with open(filename, 'rt') as f:
         rows = csv.reader(f)
         headers = next(rows)
-        portfolio+ = []
+        portfolio+= []
         
         for row in rows:
             t = {}
