@@ -1,3 +1,19 @@
+# name = 'IBM'
+# shares = 100
+# price = 91.1
+
+# print(f"{name:>10s} {shares:>10d} {price:>10.2f}")
+
+# s = {
+#     'name' : 'IBM',
+#     'shares' : 100,
+#     'price' : 91.1
+# }
+
+# '{name:>10s} {shares:10d} {price:10.2f}'.format_map(s)
+
+
+
 import csv
 
 filename = "../../python_learning/Basic/Data/portfolio.csv"
@@ -20,7 +36,7 @@ def read_portfolio_as_dict(filename):
     with open(filename, 'rt') as f:
         rows = csv.reader(f)
         headers = next(rows)
-        portfolio+= []
+        portfolio = []
         for row in rows:
             t = {}
             t['share_name'] = row[0]
@@ -58,4 +74,19 @@ def calculate_profit_loss(portfolio):
             print(f"Sad you made a loss of {total}")
         
         
-calculate_profit_loss("../../python_learning/Basic/Data/portfolio.csv")
+# calculate_profit_loss("../../python_learning/Basic/Data/portfolio.csv")
+
+def make_report(portfolio,market_prices):
+    my_portfolio = read_portfolio_as_dict(portfolio)
+    actual_prices = read_prices(market_prices)
+
+    print(f'{"name":>15s} {"Shares":>15s} {"Price":>15s} {"Share_Price":>15s} {"Market_price":>15s} {"Profit/Loss made":>15s}',end = "\n\n")
+    print("---------------------------------------------------------------------------------------------------------")
+    for t in my_portfolio:
+        market_price = actual_prices[t['share_name']]
+        stock_change = market_price - t['share_price']
+        print(f"{t['share_name']:>15s} {t['share_quant']:15d} ${t['share_price']:15.2f} ${market_price :>15.2f} ${stock_change:>15.2f}")
+        
+        
+    
+    
