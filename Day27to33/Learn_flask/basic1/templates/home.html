@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+    {% block title %}
+
+    Home page
+
+    {% endblock %}
+{% block content %}
+<body>
+    <h1>Hello Google And {{user_name}}</h1>
+    <p>Welcome doodle doodle</p>
+    <table style="width:100%; text-align:center">
+        <tr>
+             <th>Index</th>
+            <th>Username</th>
+            <th>Age</th>
+            <th>Is superhero</th>
+        </tr>
+    {% for dict in mydict %}
+    <tr>
+        {% if dict.name != "John" %}
+        <td>{{dict.name}}</td>
+        <td>{{dict.address}}</td>
+        <td>{{dict.age}}</td>
+        <td>{{dict.Superhero}}</td>
+        {% endif%}
+    </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+{% endblock %}

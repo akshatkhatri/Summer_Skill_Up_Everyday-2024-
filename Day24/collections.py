@@ -25,7 +25,7 @@ for name,quant,price in portfolio:
     share_info["name"].append(quant,price   )
     
     
-    
+
     
 
 

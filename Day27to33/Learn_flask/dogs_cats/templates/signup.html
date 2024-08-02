@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+
+{% block title %} Signup Page {% endblock %}
+
+{% block content %}
+<body>
+    <form action = "{{url_for('signup')}}" method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.FullName.label }}<br>
+            {{ form.FullName(size=32) }}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.Password.label }}<br>
+            {{ form.Password(size=32) }}
+        </p>
+        <p>
+             {{ form.Conf_Password.label }}<br>
+            {{ form.Conf_Password(size=32) }}
+            {% if form.Conf_Password.errors%}
+            <ul>
+
+                {% for error in form.Conf_Password.errors %}
+                    <li id = "error">{{error}}</li> 
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+{% endblock %}
+</html>
+

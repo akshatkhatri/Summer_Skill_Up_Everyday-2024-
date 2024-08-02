@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+<title>{% block title %} Home page {% endblock %}</title>
+{% block content %}
+<a href = "{{url_for('home')}}">Home</a>
+<a href = "{{url_for('About')}}">About</a>
+<a href = "{{url_for('signup')}}">Signup</a>
+<body>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Bio</th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+           <td> <a href = "{{url_for('details',id = pet['id'])}}"><img src = "{{url_for('static',filename = 'pet'~ pet['id'] | string ~ '.jpg')}}" height  = 150></td></a>
+            <td>{{pet["name"]}}</td> 
+            <td>{{pet["age"]}}</td>
+            <td>{{pet["bio"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+{% endblock %}
